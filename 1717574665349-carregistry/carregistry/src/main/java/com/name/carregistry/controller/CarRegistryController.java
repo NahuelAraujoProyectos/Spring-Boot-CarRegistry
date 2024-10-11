@@ -17,15 +17,18 @@ public class CarRegistryController {
     public CarRegistryServiceImpl carRegistryService;
 
     @GetMapping("/cars")
-    public ResponseEntity<?> acceso(){
+    public ResponseEntity<String> acceso() {
         log.info("Ha accedido a la aplicación");
-        return null;
+        // Retornar un mensaje de acceso exitoso
+        return ResponseEntity.ok("Acceso a la aplicación exitoso");
     }
 
     @GetMapping("/datos")
-    public ResponseEntity<?> datos(){
+    public ResponseEntity<String> datos() {
+        // Ejecutar métodos del servicio
         carRegistryService.mostrarSubitulo();
         carRegistryService.mostrarDatos();
-        return null;
+        // Retornar respuesta exitosa
+        return ResponseEntity.ok("Datos mostrados con éxito");
     }
 }
