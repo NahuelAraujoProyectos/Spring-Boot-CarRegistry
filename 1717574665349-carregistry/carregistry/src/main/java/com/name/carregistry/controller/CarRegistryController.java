@@ -1,6 +1,6 @@
 package com.name.carregistry.controller;
 
-import com.name.carregistry.service.impl.CarRegistryServiceImpl;
+import com.name.carregistry.service.CarRegistryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CarRegistryController {
 
     @Autowired
-    public CarRegistryServiceImpl carRegistryService;
+    public CarRegistryService carRegistryService;
 
     @GetMapping("/cars")
     public ResponseEntity<String> acceso() {
